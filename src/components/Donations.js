@@ -1,15 +1,16 @@
-import React from "react";
 import styled from "styled-components";
+import Cards from "./Cards";
 
 const FirstStory = styled.section`
-  height: 100vh;
   display: grid;
   text-align: center;
-  background: url("https://f5p3e9e4.stackpathcdn.com/wp-content/uploads/2022/10/Hydro-Power-Dam-680x365_c.jpg")
+  background: url("https://images.pexels.com/photos/3959485/pexels-photo-3959485.jpeg?auto=compress&cs=tinysrgb&w=1600")
     no-repeat center center;
   background-size: cover;
+  background-color: black;
   padding: 0;
   margin: 0;
+  color: #fff;
 `;
 
 const Story = styled.div`
@@ -23,12 +24,19 @@ const StoryHeading = styled.h2`
   padding-bottom: 20px;
 `;
 
-const FirstStoryText = styled.p`
-  color: #000;
-  font-weight: 700;
-  font-size: clamp(18px, 3vw, 35px);
+const StoryText = styled.p`
+  font-weight: 500;
+  font-size: clamp(14px, 3vw, 20px);
   text-align: justify;
-  color: navy;
+  line-height: 40px;
+`;
+
+const Donation = styled.div`
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1198px;
 `;
 
 const Donations = () => {
@@ -37,9 +45,51 @@ const Donations = () => {
       <Story>
         <StoryHeading>How can we help?</StoryHeading>
 
-        <FirstStoryText>
+        <StoryText>
+          Several individuals have taken up the challenge to raise funds to
+          support the flood victims while we have a few non-profit organizations
+          too who have shown interest. You can donate to any of them below. <br/>
+          You can click on Learn more to see other methods to donate especially for people in diaspora.
+        </StoryText>
+
+        <Donation>
+          <Cards
+            name="Sly Foundation"
+            acctName="The sly foundation"
+            acctNumber="7611726010"
+            bankName="FCMB"
+            link="https://slyfoundation.org/"
+          />
+          <Cards
+            name=" InnerCity Mission"
+            acctName="InnerCity Mission For Children"
+            acctNumber="1013117857"
+            bankName="Zenith bank"
+            link="https://theinnercitymission.ngo/video/hope-nigeria-benue-flood-victims/"
+          />
+          <Cards 
+            name=" International Rescues Committee"
+            acctName="Please click on the link below to donate"
         
-        </FirstStoryText>
+            link="https://www.rescue.org/country/nigeria"
+          />
+          <Cards 
+            name="Chief Foundation"
+            acctName="Jonathan Irondi"
+            acctNumber="0040825686"
+            bankName="Guaranty Trust bank"
+            link="https://twitter.com/gechife/status/1579889714144096265"
+          />
+
+          <Cards 
+            name="Sesor Empowerment Foundation"
+            acctName="Sesor Empowerment Foundation"
+            acctNumber="0170089727"
+            bankName="Guaranty Trust bank"
+            link="https://sesorafrica.org/"
+          />
+
+        </Donation>
       </Story>
     </FirstStory>
   );

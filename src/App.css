@@ -9,6 +9,7 @@
 
 body{
    font-family: 'Playfair Display', serif;
+   overflow-x: hidden;
 }
 
 h1{
@@ -17,4 +18,16 @@ h1{
 
 img{
    max-width: 100%;
+}
+.App{
+   scroll-snap-type: y mandatory;
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+
+section{
+   min-height: 100vh;
+   scroll-snap-align: start;
+   color: #fff;
+
 }

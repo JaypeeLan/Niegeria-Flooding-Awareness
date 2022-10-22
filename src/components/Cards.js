@@ -1,35 +1,36 @@
-import {
-  CCard,
-  CCardImage,
-  CCardBody,
-  CCardTitle,
-  CCardText,
-  CListGroup,
-  CListGroupItem,
-  CCardLink,
-} from "@coreui/react";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
 
-const Cards = () => {
+import { Link } from "@mui/material";
+import Typography from "@mui/material/Typography";
+
+const Cards = (props) => {
   return (
-    <CCard style={{ width: "18rem" }}>
-      <CCardImage orientation="top" src="/images/react.jpg" />
-      <CCardBody>
-        <CCardTitle>Card title</CCardTitle>
-        <CCardText>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </CCardText>
-      </CCardBody>
-      <CListGroup flush>
-        <CListGroupItem>Cras justo odio</CListGroupItem>
-        <CListGroupItem>Dapibus ac facilisis in</CListGroupItem>
-        <CListGroupItem>Vestibulum at eros</CListGroupItem>
-      </CListGroup>
-      <CCardBody>
-        <CCardLink href="#">Card link</CCardLink>
-        <CCardLink href="#">Another link</CCardLink>
-      </CCardBody>
-    </CCard>
+    <Card
+      sx={{ width: 300, maxWidth: 345 }}
+      style={{ margin: "10px auto", textAlign: "left" }}
+    >
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {props.name}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          Account Name: {props.acctName}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          Account Number : {props.acctNumber}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          Bank Name: {props.bankName}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Link target="_blank" href={props.link} size="small">
+          Learn More
+        </Link>
+      </CardActions>
+    </Card>
   );
 };
 
